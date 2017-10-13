@@ -12164,17 +12164,19 @@ on their levels of access rights</li>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Data-Partitioning">Data Partitioning<a class="anchor-link" href="#Data-Partitioning">&#182;</a></h2><ul>
-<li>Sometimes the data of a database is partitioned:</li>
+<li>Sometimes the data of a database is partitioned.</li>
+</ul>
+<ul>
 <li><strong>Horizontal:</strong> projection on certain attributes<ul>
-<li>Useful when some attributes are bulky or used rarely</li>
-<li>In the distributed databases</li>
-<li>A view with <strong>joins</strong> can give the whole picture</li>
+<li>Break up our table based on rows</li>
+<li>Useful when some attributes are bulky or rarely used</li>
+<li>Distributed databases</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li><strong>Vertical:</strong> selection on certain values (ClientsParis, ClientsLyon)<ul>
-<li>A view with <strong>union</strong> can give the whole picture</li>
+<li>Splitting out extra columns into their own table(s)</li>
 </ul>
 </li>
 </ul>
@@ -12321,15 +12323,16 @@ on their levels of access rights</li>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Updating-Views">Updating Views<a class="anchor-link" href="#Updating-Views">&#182;</a></h2><ul>
-<li>How can we insert a tuple into a table that <em>doesn't exist</em>?<div class="highlight"><pre><span></span><span class="nf">Employee</span><span class="p">(</span><span class="n">ssn</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">department</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+<li>How can we insert a tuple into a table that <em>doesn't exist</em>?</li>
+</ul>
+<blockquote><div class="highlight"><pre><span></span><span class="nf">Employee</span><span class="p">(</span><span class="n">ssn</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">department</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
 </pre></div>
 <div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">VIEW</span>  <span class="n">Developers</span> <span class="k">AS</span>
- <span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">project</span>
- <span class="k">FROM</span>  <span class="n">Employee</span>
- <span class="k">WHERE</span> <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;Development&#39;</span>
+   <span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">project</span>
+   <span class="k">FROM</span>  <span class="n">Employee</span>
+   <span class="k">WHERE</span> <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;Development&#39;</span>
 </pre></div>
-</li>
-</ul>
+</blockquote>
 
 </div>
 </div>
@@ -12344,15 +12347,15 @@ on their levels of access rights</li>
 </ul>
 <blockquote><p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><span class="nf">Employee</span><span class="p">(</span><span class="n">ssn</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">department</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
-  <span class="nf">Developers</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">department</span><span class="p">)</span>
+<span class="nf">Developers</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">department</span><span class="p">)</span>
 </pre></div>
 <p>The following insertion:</p>
 <div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span>  <span class="n">Developers</span>   
-  <span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimizer&#39;</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimizer&#39;</span><span class="p">)</span>
 </pre></div>
 <p>becomes:</p>
 <div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span>  <span class="n">Employee</span> 
-  <span class="k">VALUES</span><span class="p">(</span><span class="no">NULL</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="no">NULL</span><span class="p">,</span> <span class="s1">&#39;Optimizer&#39;</span><span class="p">,</span> <span class="no">NULL</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="no">NULL</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="no">NULL</span><span class="p">,</span> <span class="s1">&#39;Optimizer&#39;</span><span class="p">,</span> <span class="no">NULL</span><span class="p">)</span>
 </pre></div>
 </blockquote>
 
@@ -12381,7 +12384,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </ul>
 </blockquote>
 <ul>
-<li>We need to add 'Joe' to Person first.<ul>
+<li>We need to add 'Joe' to <em>Person</em> first.<ul>
 <li>How?!</li>
 <li>One time?</li>
 <li>Multiple times?</li>
@@ -12397,8 +12400,8 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Non-Updateable-Views">Non-Updateable Views<a class="anchor-link" href="#Non-Updateable-Views">&#182;</a></h2><ul>
-<li>Most SQL implementations allow updates <strong>only on simple views</strong>. <ul>
+<h2 id="Updating-Views">Updating Views<a class="anchor-link" href="#Updating-Views">&#182;</a></h2><ul>
+<li>Most SQL implementations allow updates <span style="color:red"><b>only on simple views</b></span>. <ul>
 <li>The from clause has only one database relation.</li>
 <li>The select clause contains only attribute names of the relation.<ul>
 <li>No expressions, aggregates, or distinct specification.</li>
@@ -12418,7 +12421,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Non-Updateable-Views">Non-Updateable Views<a class="anchor-link" href="#Non-Updateable-Views">&#182;</a></h2><ul>
+<h2 id="Updating-Views">Updating Views<a class="anchor-link" href="#Updating-Views">&#182;</a></h2><ul>
 <li>SQLite views are read-only and thus you may not be able to execute a DELETE, INSERT or UPDATE statement on a view.<ul>
 <li>A workaround exists</li>
 <li>Not in the scope of this class</li>
@@ -12438,7 +12441,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 <h2 id="Types-of-Views">Types of Views<a class="anchor-link" href="#Types-of-Views">&#182;</a></h2><ul>
 <li><strong>Virtual views</strong><ul>
 <li>Used in databases</li>
-<li>Computed only <strong>on-demand</strong> – slow at runtime</li>
+<li>Computed only <strong>on-demand</strong> – <em>slow at runtime</em></li>
 <li>Always up to date</li>
 </ul>
 </li>
@@ -12456,7 +12459,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 <li><strong>Materialized views</strong><ul>
 <li>A physical table containing all the tuples in the result of the query defining the view</li>
 <li>Used in Data Warehouses (but recently also in DBMS)</li>
-<li>Precomputed offline – fast at runtime</li>
+<li>Precomputed offline – <em>fast at runtime</em></li>
 <li>If relations used in the query are updated, the materialized view result becomes out of date<ul>
 <li>Need to maintain the view, by updating the view whenever the underlying relations are updated.</li>
 </ul>
@@ -12637,13 +12640,13 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 <li><span style="color:red"><b>Privacy</b></span> Users should not be able to see and use data they are not supposed to.<blockquote><p>e.g., A student can't see other students' grades.</p>
 </blockquote>
 </li>
-<li><span style="color:red"><b>Security</b></span> No one should be able to enter the system and / or impact its behavior without being authorized to do so.<blockquote><p>e.g. delete or change data without being authorized</p>
+<li><span style="color:red"><b>Security</b></span> No one should be able to enter the system and / or impact its behavior without being authorized to do so.<blockquote><p>e.g., Delete or change data without being authorized</p>
 </blockquote>
 </li>
 <li><span style="color:red"><b>Integrity</b></span> Authorized users should not be able to modify things they are not supposed to.<blockquote><p>e.g., Only instructors can assign grades.</p>
 </blockquote>
 </li>
-<li><span style="color:red"><b>Availability</b></span> Users should be able to see and modify things they are allowed to.<blockquote><p>e.g. the DB should always be operational</p>
+<li><span style="color:red"><b>Availability</b></span> Users should be able to see and modify things they are allowed to.<blockquote><p>e.g. The DB should always be operational</p>
 </blockquote>
 </li>
 </ul>
