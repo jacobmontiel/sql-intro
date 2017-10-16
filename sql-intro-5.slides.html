@@ -11859,6 +11859,63 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Today's-lecture">Today's lecture<a class="anchor-link" href="#Today's-lecture">&#182;</a></h3><ol>
+<li>Transactions</li>
+<li>Views</li>
+<li>Access Rights in SQL</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Transactions">Transactions<a class="anchor-link" href="#Transactions">&#182;</a></h1><ul>
+<li>A logical unit of work consisting of one or more SQL statements</li>
+<li>Atomic transaction<ul>
+<li><strong>Fully executed</strong> or</li>
+<li><strong>Rolled back</strong> as if it never occurred</li>
+</ul>
+</li>
+<li>Isolation from concurrent transactions<ul>
+<li>Changes made by a transaction are not visible to other concurrently executing transactions until the transaction completes</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Transaction model based on two SQL statements:<ul>
+<li><strong>COMMIT</strong></li>
+<li><strong>ROLLBACK</strong></li>
+</ul>
+</li>
+<li>Transactions begin implicitly<ul>
+<li>Ended by commit work or rollback work</li>
+</ul>
+</li>
+<li>Default on most databases: each SQL statement commits automatically</li>
+<li>Can turn off auto commit for a session (e.g. using API)</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="VIEWS">VIEWS<a class="anchor-link" href="#VIEWS">&#182;</a></h1><ul>
 <li>Definition</li>
 <li>View Creation and Destruction</li>
@@ -12552,49 +12609,6 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 <li>Yields data independence, logical and physical</li>
 </ul>
 </li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Transactions">Transactions<a class="anchor-link" href="#Transactions">&#182;</a></h1><ul>
-<li>A logical unit of work consisting of one or more SQL statements</li>
-<li>Atomic transaction<ul>
-<li><strong>Fully executed</strong> or</li>
-<li><strong>Rolled back</strong> as if it never occurred</li>
-</ul>
-</li>
-<li>Isolation from concurrent transactions<ul>
-<li>Changes made by a transaction are not visible to other concurrently executing transactions until the transaction completes</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Transaction model based on two SQL statements:<ul>
-<li><strong>COMMIT</strong></li>
-<li><strong>ROLLBACK</strong></li>
-</ul>
-</li>
-<li>Transactions begin implicitly<ul>
-<li>Ended by commit work or rollback work</li>
-</ul>
-</li>
-<li>Default on most databases: each SQL statement commits automatically</li>
-<li>Can turn off auto commit for a session (e.g. using API)</li>
 </ul>
 
 </div>
