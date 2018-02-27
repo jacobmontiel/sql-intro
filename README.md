@@ -16,4 +16,6 @@ Requirements:
 * [ipython-sql](https://github.com/catherinedevlin/ipython-sql)
 
 Optional:
-You can use [Binder](https://beta.mybinder.org/) to run the notebook online.
+You can use Binder to run the notebook online (Firefox recommended).
+
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/jacobmontiel/sql-intro/master)
