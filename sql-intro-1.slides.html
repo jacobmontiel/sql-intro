@@ -12056,7 +12056,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Table-Schema">Table Schema<a class="anchor-link" href="#Table-Schema">&#182;</a></h3><p>The <strong>schema</strong> of a table is the table name, its attributes, and their types:</p>
+<h3 id="Table-Schema">Table Schema<a class="anchor-link" href="#Table-Schema">&#182;</a></h3><p>The <strong>schema</strong> of a table is the <em>table name</em>, its <em>attributes</em>, and their <em>types</em>:</p>
 <div class="highlight"><pre><span></span><span class="nf">Planes</span><span class="p">(</span><span class="n">ID</span><span class="p">:</span> <span class="kt">INT</span><span class="p">,</span> <span class="n">Model</span><span class="p">:</span> <span class="kt">CHAR</span><span class="p">,</span> <span class="n">Built_date</span><span class="p">:</span> <span class="kt">DATE</span><span class="p">,</span> <span class="n">Number_of_seats</span><span class="p">:</span> <span class="kt">INT</span><span class="p">)</span>
 </pre></div>
 
@@ -12111,7 +12111,8 @@ a.anchor-link {
 <ul>
 <li><em>"Only registered students can enroll in courses"</em>, in other words, a student must exist in the <em>Students</em> table to enroll in class.</li>
 </ul>
-<center>Students</center><table>
+<p><b><center>Students</center></b></p>
+<table>
 <thead><tr>
 <th>sid</th>
 <th>name</th>
@@ -12131,8 +12132,8 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p><br></p>
-<center>Enrolled</center><table>
+<p><b><center>Enrolled</center></b></p>
+<table>
 <thead><tr>
 <th style="text-align:center">student_id</th>
 <th style="text-align:center">course_id</th>
@@ -12187,7 +12188,7 @@ a.anchor-link {
 <li>Value does not exists</li>
 <li>Value exists but is unknown</li>
 <li>Value not applicable</li>
-<li>Etc.</li>
+<li>etc.</li>
 </ul>
 <blockquote><p><strong>Example:</strong> In the following table, we can add a student 'Jim' who just enrolled on his first class</p>
 <div class="highlight"><pre><span></span><span class="nf">Students</span><span class="p">(</span><span class="n">sid</span><span class="p">:</span> <span class="kt">INT</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="kt">CHAR</span><span class="p">,</span> <span class="n">gpa</span><span class="p">:</span> <span class="kt">FLOAT</span><span class="p">)</span>
