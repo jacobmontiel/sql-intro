@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -11776,7 +11776,6 @@ ul.typeahead-list > li > a {
 /* Overrides of notebook CSS for static HTML export */
 .reveal {
   font-size: 160%;
-  overflow-y: scroll;
 }
 .reveal pre {
   width: inherit;
@@ -11806,6 +11805,41 @@ ul.typeahead-list > li > a {
 }
 .reveal .progress {
   position: static;
+}
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #727272;
+}
+.reveal .controls .navigate-left.enabled:hover,
+.reveal .controls .navigate-left.enabled.enabled:hover {
+  border-right-color: #dfdfdf;
+}
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #727272;
+}
+.reveal .controls .navigate-right.enabled:hover,
+.reveal .controls .navigate-right.enabled.enabled:hover {
+  border-left-color: #dfdfdf;
+}
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #727272;
+}
+.reveal .controls .navigate-up.enabled:hover,
+.reveal .controls .navigate-up.enabled.enabled:hover {
+  border-bottom-color: #dfdfdf;
+}
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #727272;
+}
+.reveal .controls .navigate-down.enabled:hover,
+.reveal .controls .navigate-down.enabled.enabled:hover {
+  border-top-color: #dfdfdf;
+}
+.reveal .progress span {
+  background: #727272;
 }
 div.input_area {
   padding: 0.06em;
@@ -11840,6 +11874,19 @@ a.anchor-link {
 .rendered_html p {
   text-align: inherit;
 }
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar *
+{
+  background:transparent;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #727272 !important;
+}
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
@@ -11854,8 +11901,7 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11868,8 +11914,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11889,8 +11934,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11911,8 +11955,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11926,8 +11969,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11942,8 +11984,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11963,15 +12004,14 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Views">Views<a class="anchor-link" href="#Views">&#182;</a></h2><ul>
 <li><p>Provide a mechanism to hide certain data from the view of certain users.</p>
 </li>
-<li><p>Any relation that is not of the conceptual model but is made visible to a user as a <em>“virtual relation”</em> is called a <strong>view</strong>.</p>
+<li><p>Any relation that is not part of the conceptual model but is visible to a user as a <em>“virtual relation”</em> is called a <strong>view</strong>.</p>
 </li>
 <li><p>Not physically stored.</p>
 </li>
@@ -11980,8 +12020,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11995,8 +12034,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12017,8 +12055,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12039,8 +12076,7 @@ user views at external level</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12062,8 +12098,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12088,8 +12123,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12110,8 +12144,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12130,8 +12163,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12152,8 +12184,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12172,8 +12203,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12194,8 +12224,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12215,8 +12244,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12241,8 +12269,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12267,8 +12294,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12285,8 +12311,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12307,8 +12332,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12334,8 +12358,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12359,8 +12382,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12374,8 +12396,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12394,8 +12415,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12419,8 +12439,7 @@ on their levels of access rights</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12452,20 +12471,19 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Updating-Views">Updating Views<a class="anchor-link" href="#Updating-Views">&#182;</a></h2><ul>
 <li>Most SQL implementations allow updates <span style="color:red"><b>only on simple views</b></span>. <ul>
-<li>The from clause has only one database relation.</li>
-<li>The select clause contains only attribute names of the relation.<ul>
+<li>The <code>FROM</code> clause has only one database relation.</li>
+<li>The <code>SELECT</code> clause contains only attribute names of the relation.<ul>
 <li>No expressions, aggregates, or distinct specification.</li>
 </ul>
 </li>
-<li>Any attribute not listed in the select clause can be set to null.</li>
-<li>The query does not have a group by or having clause.</li>
+<li>Any attribute not listed in the <code>SELECT</code> clause can be set to <code>NULL</code>.</li>
+<li>The query does not have a <code>GROUP BY</code> or <code>HAVING</code> clause.</li>
 </ul>
 </li>
 </ul>
@@ -12473,8 +12491,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12490,8 +12507,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12507,8 +12523,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12529,8 +12544,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div><aside class="notes">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12545,8 +12559,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </aside></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12591,8 +12604,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12614,8 +12626,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12627,8 +12638,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12645,8 +12655,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12668,8 +12677,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12699,8 +12707,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12718,8 +12725,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12733,8 +12739,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12753,8 +12758,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12785,41 +12789,42 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2><blockquote><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">INSERT</span><span class="p">,</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="n">Movie</span> <span class="k">TO</span> <span class="n">Klaus</span>
 </pre></div>
-</blockquote>
 <ul>
-<li>Klaus can query Movie or insert tuples into it.</li>
+<li>Klaus can query <strong>'Movie'</strong> or insert tuples into it.</li>
 </ul>
+</blockquote>
+<hr>
 <blockquote><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">DELETE</span> <span class="k">ON</span> <span class="n">Movie</span> <span class="k">TO</span> <span class="n">shop_owner</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span>
 </pre></div>
-</blockquote>
 <ul>
-<li>Anna can delete tuples, and also authorize others to do so</li>
+<li>Anna can delete <strong>'Movie'</strong> tuples, and also authorize others to do so</li>
 </ul>
+</blockquote>
+<hr>
 <blockquote><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">UPDATE</span> <span class="p">(</span><span class="n">price_Day</span><span class="p">)</span> <span class="k">ON</span> <span class="n">Movie</span> <span class="k">TO</span> <span class="n">movie_staff</span>
 </pre></div>
-</blockquote>
 <ul>
-<li>Staff can update (only) the price field of Movie tuples</li>
+<li>Staff can update (only) the price field of <strong>'Movie'</strong> tuples</li>
 </ul>
+</blockquote>
+<hr>
 <blockquote><div class="highlight"><pre><span></span><span class="k">GRANT</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="n">MovieView</span> <span class="k">TO</span> <span class="n">Customers</span>
 </pre></div>
-</blockquote>
 <ul>
-<li>This does NOT allow the customers to query Movie directly!</li>
+<li>This does NOT allow the customers to query <strong>'Movie'</strong> directly!</li>
 </ul>
+</blockquote>
 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12838,8 +12843,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12852,7 +12856,7 @@ and the view<div class="highlight"><pre><span></span><span class="k">CREATE</spa
 <center><img src="./figures/sql-xkcd.png" width="40%"></center>
 </div>
 </div>
-</div></section></section>
+</div>
 </div>
 </div>
 
@@ -12877,8 +12881,7 @@ require(
             progress: true,
             history: true,
 
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+            transition: "slide",
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
@@ -12898,13 +12901,25 @@ require(
 
         Reveal.addEventListener('slidechanged', update);
 
-        var update_scroll = function(event){
-          $(".reveal").scrollTop(0);
-        };
+        function setScrollingSlide() {
+            var scroll = false
+            if (scroll === true) {
+              var h = $('.reveal').height() * 0.95;
+              $('section.present').find('section')
+                .filter(function() {
+                  return $(this).height() > h;
+                })
+                .css('height', 'calc(95vh)')
+                .css('overflow-y', 'scroll')
+                .css('margin-top', '20px');
+            }
+        }
 
-        Reveal.addEventListener('slidechanged', update_scroll);
+        // check and set the scrolling slide every time the slide change
+        Reveal.addEventListener('slidechanged', setScrollingSlide);
 
     }
+
 );
 </script>
 
