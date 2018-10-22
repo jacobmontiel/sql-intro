@@ -12338,7 +12338,7 @@ on their levels of access rights</li>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="View-Expansion">View Expansion<a class="anchor-link" href="#View-Expansion">&#182;</a></h2><ul>
 <li><p>Query using a <strong>view</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">Seattle</span><span class="o">-</span><span class="n">v</span><span class="p">.</span><span class="n">store</span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">SeattleView</span><span class="p">.</span><span class="n">store</span>
 <span class="k">FROM</span>   <span class="n">SeattleView</span><span class="p">,</span> <span class="n">Product</span>
 <span class="k">WHERE</span>  <span class="n">SeattleView</span><span class="p">.</span><span class="n">product</span> <span class="o">=</span> <span class="n">Product</span><span class="p">.</span><span class="n">name</span>
      <span class="k">AND</span> <span class="n">Product</span><span class="p">.</span><span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;shoes&#39;</span>
